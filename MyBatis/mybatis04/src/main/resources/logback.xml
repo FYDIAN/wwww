@@ -1,0 +1,23 @@
+<!--
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration debug="true"
+               &lt;!&ndash;指定日志输出的位置&ndash;&gt;
+                <appender name="STDOUT"
+                          class="ch.qos.logback.core.ConsoleAppender">
+                     <encoder>
+                    &lt;!&ndash;日志输出格式&ndash;&gt;
+                    &lt;!&ndash;按照时间：时间。日志级别：线程名称，打印的日志类，日志主体内容&ndash;&gt;
+                        <pattern>
+                        [%d{HH:mm:ss:SS}] [%-5level] [%thread] [%logger] [%msg]%n
+                         </pattern>
+                      </encoder>
+                </appender>
+        &lt;!&ndash;设定全局日志级别，&ndash;&gt;
+        &lt;!&ndash;指定任何一个日志级别都只打印当前及后面日志的&ndash;&gt;
+        <root level="DEBUG">
+        <appender-ref ref="STDOUT"/>
+        </root>
+        &lt;!&ndash;根据特殊要求指定局部日志级别&ndash;&gt;
+        <logger name="com.fy.mybatis.mapper" level="DEBUG"/>
+</configuration>
+-->

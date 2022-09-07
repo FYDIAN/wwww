@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration>
+    <!-- 引入配置文件 -->
+    <properties resource="jdbc.properties"/>
+    <!--<context id="DB2Tables" targetRuntime="MyBatis3Simple">简单版-->
+    <!--豪华版-->
+    <context id="DB2Tables" targetRuntime="MyBatis3">
+        <!-- jdbc连接 -->
+        <jdbcConnection driverClass="${jdbc.driver}"
+                        connectionURL="${jdbc.url}" userId="${jdbc.username}" password="${jdbc.password}"/>
+        <!--javaBean生成策略-->
+        <javaModelGenerator targetPackage="com.fy.mybatis.pojo" targetProject=".\src\main\java">
+            <property name="enableSubPackages" value="true"></property>
+            <property name="trimStrings" value="true"></property>
+        </javaModelGenerator>
+        <!-- sql映射文件生成策略-->
+        <sqlMapGenerator targetPackage="com.fy.mybatis.mapper" targetProject=".\src\main\resources">
+            <property name="enableSubPackages" value="true"></property>
+        </sqlMapGenerator>
+        <!--mapper接口生成策略-->
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.fy.mybatis.mapper"
+                             targetProject=".\src\main\java">
+            <property name="enableSubPackages" value="true"/>
+        </javaClientGenerator>
+        <!--逆向分析表-->
+        <table tableName="t_emp" domainObjectName="Emp"/>
+        <table tableName="t_dept" domainObjectName="Dept"/>
+
+    </context>
+</generatorConfiguration>

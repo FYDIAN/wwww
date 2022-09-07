@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.fy.mybatis.mapper.UserMapper">
+    <!--insertMapper-->
+    <insert id="insertUser">
+        INSERT INTO t_user VALUES(NULL,'wgy','456',18,'女','13465@qq.com');
+    </insert>
+
+</mapper>
